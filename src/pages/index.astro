@@ -1,16 +1,66 @@
 ---
-
+import { Navbar } from "../components/navbar";
+import { Footer } from "../components/footer";
+import { Slider } from "../components/slider";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Contatech</title>
+  </head>
+  <body>
+    <section>
+      <Navbar />
+    </section>
+
+    <main class="flex flex-1 flex-col items-center py-16">
+      <div class="flex flex-col items-center pt-16">
+        <div
+          class="flex flex-col lg:flex-row items-center gap-8 p-8 max-w-6xl w-full"
+        >
+          <div class="flex flex-col space-y-4 lg:w-1/2 w-full">
+            <h1 class="text-5xl font-bold">Contatech</h1>
+            <p class="text-gray-600 text-lg">
+              ContaTech tiene como objetivo profundizar en temas clave como la
+              elaboración de estados financieros, la correcta interpretación de
+              la normativa fiscal, la identificación de oportunidades de ahorro
+              fiscal y la gestión eficiente de impuestos. Además, busca
+              capacitar a los participantes en el uso de herramientas
+              tecnológicas y software especializado en contabilidad y
+              tributación, así como en la elaboración de informes y análisis
+              financiero-contables para apoyar la toma de decisiones
+              estratégicas en las organizaciones. En resumen, el objetivo es
+              formar profesionales competentes y actualizados que puedan
+              desempeñarse con éxito en el campo de la asesoría tributaria y
+              contable, contribuyendo al cumplimiento normativo y al crecimiento
+              sostenible de las empresas.
+            </p>
+            <!-- <div class="flex flex-col space-y-2">
+            <a href="/login">
+              <Button className="w-full lg:w-1/2">Get Your Headshots</Button>
+            </a>
+            <p class="text-sm text-gray-500 italic">
+              Trusted by professionals worldwide. Quick and efficient.
+            </p>
+          </div>
+          <div class="mt-4 text-gray-500">
+            <span>Already a member? </span>
+            <a class="text-blue-600 hover:underline" href="/login"> Sign In </a>
+          </div> -->
+          </div>
+          <div class="lg:w-1/2 w-full mt-8 lg:mt-0">
+            <Slider client:load />
+          </div>
+        </div>
+        <!-- <ExplainerSection /> -->
+        <!-- <PricingSection /> -->
+      </div>
+    </main>
+
+    <Footer />
+  </body>
 </html>
